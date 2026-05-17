@@ -11,7 +11,7 @@ class Customer(DBModelBase):
      name = Column(String(150), nullable=False)
      timestamp = Column(DateTime, nullable=False, default=datetime.utcnow)        # exact time of call
      day_of_call = Column(String(10), nullable=False)                             # e.g. "Monday"
-     hour_of_day = Column(DateTime, nullable=False, default=datetime.utcnow)      # 0–23
+     hour_of_day = Column(Integer, nullable=False)                                # 0–23
      wait_time = Column(Integer, nullable=False)                                  # minutes
      issue_categories = Column(Text, nullable=False)                              # Billing, Technical, Service, Account
      resolution_status = Column(Boolean, nullable=False)                          #True if resolved, False if not                     

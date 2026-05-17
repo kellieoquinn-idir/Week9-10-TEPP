@@ -34,13 +34,14 @@ def generate_call_record ():
 
 # Create and return a Customer instance with the generated data
     return Customer(
-        id=fake.uuid4(),
-        name=fake.name(),
-        timestamp=fake.date_time_this_year(),
-        day_of_call=timestamp.strftime("%A"),
-        hour_of_day=timestamp.hour,
+        id=id,
+        name=name,
+        timestamp=timestamp,
+        day_of_call=day_of_call,
+        hour_of_day=hour_of_day,
         wait_time=wait_time,
         issue_categories=issue_category,
+        resolution_status=resolution_status,
     )
 
 def seed_customer (num_records=1000):
@@ -50,3 +51,8 @@ def seed_customer (num_records=1000):
         session.add(record)
     session.commit()
     session.close()
+
+
+if __name__ == "__main__":
+    seed_customer(1000)
+    print("Seeded Customer table with sample data.")
