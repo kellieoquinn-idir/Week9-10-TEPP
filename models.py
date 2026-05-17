@@ -5,7 +5,7 @@ from datetime import datetime
 
 DBModelBase = declarative_base()
 
-class Customer:
+class Customer(DBModelBase):
      __tablename__ = "Customer"
      id = Column(Text, primary_key=True, index=True)                              # UUID
      name = Column(String(150), nullable=False)
@@ -14,8 +14,6 @@ class Customer:
      hour_of_day = Column(DateTime, nullable=False, default=datetime.utcnow)      # 0–23
      wait_time = Column(Integer, nullable=False)                                  # minutes
      issue_categories = Column(Text, nullable=False)                              # Billing, Technical, Service, Account
-     resolution_status = Column(Boolean, nullable=False)                          #True if resolved, False if not
-     customer_satisfaction = Column(Integer, nullable=False)                      # 1–5 rating
-     call_duration = Column(Integer, nullable=False)                                  # minutes
+     resolution_status = Column(Boolean, nullable=False)                          #True if resolved, False if not                     
 
 
