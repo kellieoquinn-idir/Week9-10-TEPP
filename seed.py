@@ -40,7 +40,7 @@ def generate_call_record ():
         day_of_call=day_of_call,
         hour_of_day=hour_of_day,
         wait_time=wait_time,
-        issue_categories=issue_category,
+        issue_category=issue_category,
         resolution_status=resolution_status,
     )
 

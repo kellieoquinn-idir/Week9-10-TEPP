@@ -9,6 +9,4 @@ BASE_DIR = Path(__file__).resolve().parent
 DATABASE_URL = f"sqlite:///{BASE_DIR / 'test.db'}"
 
 engine = create_engine(DATABASE_URL)
-DBModelBase.metadata.create_all(engine)
-
 SessionLocal = sessionmaker(bind=engine)

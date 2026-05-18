@@ -13,7 +13,7 @@ class Customer(DBModelBase):
      day_of_call = Column(String(10), nullable=False)                             # e.g. "Monday"
      hour_of_day = Column(Integer, nullable=False)                                # 0–23
      wait_time = Column(Integer, nullable=False)                                  # minutes
-     issue_categories = Column(Text, nullable=False)                              # Billing, Technical, Service, Account
+     issue_category = Column(Text, nullable=False)                              # Billing, Technical, Service, Account
      resolution_status = Column(Boolean, nullable=False)                          #True if resolved, False if not                     
 
 
