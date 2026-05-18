@@ -6,7 +6,7 @@ from datetime import datetime
 DBModelBase = declarative_base()
 
 class Customer(DBModelBase):
-     __tablename__ = "Customers"
+     __tablename__ = "Customer"
      id = Column(Text, primary_key=True, index=True)                              # UUID
      name = Column(String(150), nullable=False)
      timestamp = Column(DateTime, nullable=False, default=datetime.utcnow)        # exact time of call
