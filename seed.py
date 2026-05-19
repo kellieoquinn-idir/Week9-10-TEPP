@@ -44,11 +44,15 @@ def generate_call_record ():
         resolution_status=resolution_status,
     )
 
-def seed_customer (num_records=1000):
+def seed_customer(num_records=1000):
     session = SessionLocal()
+    session.query(Customer).delete()
+    session.commit()
+
     for _ in range(num_records):
         record = generate_call_record()
         session.add(record)
+
     session.commit()
     session.close()
 
